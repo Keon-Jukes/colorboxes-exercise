@@ -7,11 +7,23 @@ class ColorBox extends React.Component {
         this.state = {
             currColor : this.props.color, 
         }
+        this.handleClick = this.handleClick.bind(this);
     }
+
+    changeColor(){
+        let newColor = this.props.randomColor()
+        this.setState({currColor: newColor})
+    }
+     
+    handleClick(){
+        this.changeColor();
+    }
+
     render(){
+        console.log('props --->', this.props)
         return(
         <div>
-            <div style={{backgroundColor: this.state.currColor, width: '200px', height: '200px'}}>Color Box</div>
+            <div onClick={this.handleClick} style={{backgroundColor: this.state.currColor, width: '200px', height: '200px'}}></div>
         </div>
         )
     }

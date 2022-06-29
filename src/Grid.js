@@ -18,19 +18,42 @@ class Grid extends Component {
 		  '#4D8066', '#809980', '#E6FF80', '#1AFF33', '#999933',
 		  '#FF3380', '#CCCC00', '#66E64D', '#4D80CC', '#9900B3', 
 		  '#E64D66', '#4DB380', '#FF4D4D', '#99E6E6', '#6666FF'],
-        numBoxes: 16
+        numBoxes: 18
     }
     constructor(props){
         super(props)
         this.state = {
-
+           
         }
+        this.generateRandomColor = this.generateRandomColor.bind(this);
+        // this.generateColorBoxes = this.generateColorBoxes.bind(this);
     }
+
+    generateRandomColor(){
+        let randInx = Math.floor(Math.random() * this.props.colorArray.length) + 1;
+        let randomColor = this.props.colorArray[randInx];
+        return randomColor;
+    }
+
+    // generateColorBoxes(){
+        // for(let i = 0; i < this.props.numBoxes; i++){
+        //     return <div>
+        //         <Colorbox color={this.randomColor()} />
+        //     </div> 
+        // }
+    // }
+
     render(){
-        return(<div className='Grid'>
-                <Colorbox color="purple"/>
-                <Colorbox color="green"/>
-                <Colorbox color="yellow"/>
+        return(<div>
+            <tbody className='Grid'>
+               {[...Array(this.props.numBoxes)].map((x, i) =>
+                <Colorbox key={i} color={this.generateRandomColor()} randomColor={this.generateRandomColor}/>
+               )}
+    
+            </tbody>
+                
+                {/* <Colorbox color={this.generateRandomColor()} randomColor={this.generateRandomColor}/>
+                <Colorbox color={this.generateRandomColor()} randomColor={this.generateRandomColor}/> */}
         </div>)
     }
 }
