@@ -1,0 +1,6 @@
+/* Use flexbox to make grids go horizontal instead of vertical */
+
+.Grid {
+    display: flex;
+    flex-direction: row;
+}

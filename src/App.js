@@ -1,14 +1,12 @@
 
 import './App.css';
-import Colorbox from "./ColorBox";
+import Grid from "./Grid";
 
 
 function App() {
   return (
     <div className="App">
-      <Colorbox color="purple"/>
-      <Colorbox color="green"/>
-      <Colorbox color="yellow"/>
+      <Grid />
     </div>
   );
 }

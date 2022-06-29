@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import ColorBox from './ColorBox';
+import Colorbox from './ColorBox';
 import './Grid.css';
 
 /* use .map to render out grid based on numboxes, create a onClick event listener which sends a new color to each color box based on the randomly generated color from the colors array  */
@@ -27,8 +27,10 @@ class Grid extends Component {
         }
     }
     render(){
-        return(<div>
-            
+        return(<div className='Grid'>
+                <Colorbox color="purple"/>
+                <Colorbox color="green"/>
+                <Colorbox color="yellow"/>
         </div>)
     }
 }
