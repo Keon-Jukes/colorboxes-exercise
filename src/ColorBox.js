@@ -10,7 +10,7 @@ class ColorBox extends React.Component {
         this.handleClick = this.handleClick.bind(this);
     }
 
-    changeColor(){
+    changeColor(evt){
         let newColor = this.props.randomColor()
         this.setState({currColor: newColor})
     }
